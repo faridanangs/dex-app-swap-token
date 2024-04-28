@@ -41,6 +41,7 @@ async function getPool(tokenA, tokenB, feeAmount) {
 
     liquidity = JSBI.BigInt(liquidity.toString());
     sqrtPriceX96 = JSBI.BigInt(sqrtPriceX96.toString());
+    console.log("\n\n\n\n\n\n\n\n\n")
 
     console.log("CAllinggg Pool --------------------")
 
@@ -118,6 +119,7 @@ async function main() {
     wethBalance = await wethContract.balanceOf(RECIPIENT);
     usdcBalance = await usdcContract.balanceOf(RECIPIENT);
 
+
     console.log("---------------Before")
     console.log("Eth Balance: ", hardhat.ethers.utils.formatUnits(ethBalance, 18))
     console.log("wethBalance", hardhat.ethers.utils.formatUnits(wethBalance, 18))
@@ -149,6 +151,8 @@ async function main() {
     console.log("Eth Balance: ", hardhat.ethers.utils.formatUnits(ethBalance, 18))
     console.log("wethBalance", hardhat.ethers.utils.formatUnits(wethBalance, 18))
     console.log("usdcBalance", hardhat.ethers.utils.formatUnits(usdcBalance, 6))
+    console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
 }
 
 main()

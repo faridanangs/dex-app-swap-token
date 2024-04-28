@@ -1,9 +1,14 @@
 import "../styles/globals.css";
+import { PROvider } from "../context/context"
+import { Toaster } from "react-hot-toast"
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Component {...pageProps} />
+      <PROvider>
+        <Component {...pageProps} />
+      </PROvider>
+      <Toaster />
 
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/proper-min.js"></script>

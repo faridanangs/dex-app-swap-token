@@ -66,7 +66,7 @@ export const PROvider = ({ children }) => {
 
     // internal function
     async function getPool(tokenA, tokenB, feeAmount, provider) {
-        const [token0, token1] = tokenA.shortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA];
+        const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA];
 
         const poolAddress = Pool.getAddress(token0, token1, feeAmount);
         const contract = new ethers.Contract(poolAddress, IUniswapV3Pool, provider);
@@ -172,7 +172,7 @@ export const PROvider = ({ children }) => {
 
             const routerTrade = buildTrade([trade]);
             const opts = swapOptions({})
-            const params = SwapRouter.swapCallParameters(routerTrade, opts);
+            const params = SwapRouter.swapERC20CallParameters(routerTrade, opts);
 
             console.log(WETH_USDC_V3, "weth_usdc_v3")
             console.log(trade, "trade")
